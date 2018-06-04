@@ -1,0 +1,71 @@
+/**
+   * Name: custom.css
+  * Author James chege
+  * Date: 18/05/2018
+**/
+
+
+/*********************
+              General
+**********************/
+
+/* Change the annoying color for chrome autofills */
+
+input:-webkit-autofill {
+
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+
+}
+/*input number arrow removal*/
+/*For  Webkit browsers like Safari and Chrome */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*input number arrow removal*/
+/* For Firefox */
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+
+/*********************
+                  color
+**********************/
+
+.navbar-default {
+	background-color: #286090;
+	color: #fff;
+}
+
+.navbar-default .navbar-brand {
+	color:#fff;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:visited {
+	color: #fff;
+	background-color: #174f80;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a, .navbar-brand:hover {
+	color: #fff;
+}
+.navbar-default .navbar-nav>li>a:hover {
+   color: #fff;
+   background-color: #174f80;
+   text-decoration: none;
+ }
+
+ .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus  {
+ 	color: #fff;
+ }
+
+ /*Typography*/
+
+ .hidethis {
+  display: none;
+}
