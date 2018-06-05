@@ -5,7 +5,6 @@
 ## installation
 Clone the app 
 ## usage
-```
  * Live top and breaking news headlines :us:  -  [https://newsapi.org/v2/top-headlines?' +
           'country=us&' +API_KEY](https://newsapi.org/v2/top-headlines?' +
           'country=us&' +API_KEY)
@@ -23,4 +22,3 @@ Clone the app
   * The **/everything** endpoint includes all the articles from **/top-headlines**, plus all the millions of articles that don't make it as a top story, or that aren't breaking news anymore.
 
 * :shipit: Much is comming :soon: ...
-```
