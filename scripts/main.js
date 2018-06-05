@@ -1,14 +1,15 @@
- 	// let API_KEY = '7716a0e9d1884187aeba1ce0a4178f3d';
+ 	let API_KEY = '7716a0e9d1884187aeba1ce0a4178f3d';
 
- 	let news_url = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=7716a0e9d1884187aeba1ce0a4178f3d';
-      fetch(news_url)
-      .then((res) => res.json())
-      .then((data) => {
-      	console.log(data);
-        let output = '<h2 class="mb-4">Posts</h2>';
-        each = data.articles;
+ 	let news_url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`;
+  let req = new Request(news_url);
+      fetch(req)
+      .then((response) => response.json())
+      .then((fetched_data) => {
+      	console.log(fetched_data);
+        let article = '<h2 class="mb-4">News Articles</h2>';
+        each = fetched_data.articles;
         each.forEach(function(post){
-          output += `
+          article += `
             <div class="card card-body mb-3">
               <h3>${post.title}</h3>
               <p>${post.description}</p>
@@ -18,5 +19,18 @@
             </div>
           `;
         });
-        document.getElementById('output').innerHTML = output;
+        document.getElementById('article').innerHTML = article;
       })
+
+// var url = 'https://newsapi.org/v2/top-headlines?' +
+//           'country=us&' +
+//           'apiKey=7716a0e9d1884187aeba1ce0a4178f3d';
+// var req = new Request(url);
+// fetch(req)
+//     .then(function(response) {
+//        return response.json()
+//     }).then(function(fetched_data){
+//       console.log(fetched_data);
+//     }).catch(function(error){
+//       console.log("Request encountered an error")
+//     });
