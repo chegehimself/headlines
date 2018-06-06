@@ -30,6 +30,10 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
         </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
     </nav>
 
@@ -37,25 +41,14 @@
       <div style="height: 100px;"></div>
     <legend>Filters</legend>
 <div class="row">
-<div class=" col-sm form-group">
-    <label for="top-headlines">Top Headlines</label>
-    <select class="form-control" id="top-headlines">
-      <option>Us</option>
-      <option>BBC News</option>
-      <option>Bussiness</option>
-      <option>Trump</option>
-    </select>
-  </div>
   <div class=" col-sm form-group">
     <label for="exampleSelect1">Sources</label>
     <select class="form-control" id="allsources" onChange="changeSource();">
-      
     </select>
   </div>
   <div class=" col-sm form-group">
     <label for="country">Country</label>
-    <select class="form-control" name="countries" id="countries" onChange="changeFunc();">
-  
+    <select class="form-control" id="countries" name="countries" onChange="changeFunc();">
     </select>
   </div>
   </div>

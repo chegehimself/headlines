@@ -37,6 +37,10 @@ input[type='number'] {
                   color
 **********************/
 
+.bg-dark {
+    background-color: #286090!important;
+}
+
 .navbar-default {
 	background-color: #286090;
 	color: #fff;
