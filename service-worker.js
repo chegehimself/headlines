@@ -21,3 +21,18 @@ self.addEventListener('install', (e) => {
 		})
 		);
 });
+
+self.addEventListener('activate', (e) => {
+    console.log('Activate');
+    e.waitUntil(
+        caches.keys().then((keyList) => {
+            return Promise.all(keyList.map((key) => {
+                if (key !== cacheName) {
+                    console.log('Keeping only needed cache', key);
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
+    return self.clients.claim();
+});
