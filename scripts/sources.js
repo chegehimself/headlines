@@ -1,4 +1,4 @@
-// let API_KEY = '7716a0e9d1884187aeba1ce0a4178f3d';
+let API_KEY = '7716a0e9d1884187aeba1ce0a4178f3d';
 
 let sources_url = `https://newsapi.org/v2/sources?apiKey=${API_KEY}`;
 
@@ -11,11 +11,12 @@ fetch(req_source)
 
       	// variable  to contain all options
       	let options;
-      	// place holder for countries
+      	// place holder for various sources
       	source = fetched_res.sources;
       	source.forEach(function(post){
+      		// console.log("post id:" + post.id);
       		options += `
-			<option>${post.name}</option>
+			<option value="${post.id}">${post.name}</option>
       		`;
       	});
       	// insert available countries to the html page
@@ -23,7 +24,7 @@ fetch(req_source)
 
       	for (let i in availabelCountries) {
       		countries += `
-      		<option>${availabelCountries[i]}</option>
+      		<option value="${availabelCountries[i]}">${availabelCountries[i]}</option>
       		`;
       	}
       	

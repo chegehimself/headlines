@@ -1,11 +1,16 @@
- 	let API_KEY = '7716a0e9d1884187aeba1ce0a4178f3d';
+ 	// let API_KEY = '7716a0e9d1884187aeba1ce0a4178f3d';
+   function changeFunc() {
+    var selectBox = document.getElementById("countries");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    // console.log("inside:"+selectedValue);
+    var selectedCountry = selectedValue;
 
- 	let news_url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+ let news_url = `https://newsapi.org/v2/top-headlines?country=${selectedCountry}&apiKey=${API_KEY}`;
   let req = new Request(news_url);
       fetch(req)
       .then((response) => response.json())
       .then((fetched_data) => {
-      	console.log(fetched_data);
+        console.log(fetched_data);
         let article = '<h2 class="mb-4">News Articles</h2>';
         each = fetched_data.articles;
         each.forEach(function(post){
@@ -21,7 +26,9 @@
         });
         document.getElementById('article').innerHTML = article;
       })
-
+   }
+ 	
+// es5 (just practice)
 // var url = 'https://newsapi.org/v2/top-headlines?' +
 //           'country=us&' +
 //           'apiKey=7716a0e9d1884187aeba1ce0a4178f3d';
