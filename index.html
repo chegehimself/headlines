@@ -35,31 +35,36 @@
 
     <div class='container'>
       <div style="height: 100px;"></div>
-<fieldset class="form-group">
     <legend>Filters</legend>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-        live top and breaking news headlines
-        <!-- var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=us&'+ -->
-      </label>
-    </div>
-    <div class="form-group">
-    <label for="exampleSelect2">sources</label>
-    <select multiple class="form-control" id="exampleSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+<div class="row">
+<div class=" col-sm form-group">
+    <label for="top-headlines">Top Headlines</label>
+    <select class="form-control" id="top-headlines">
+      <option>Us</option>
+      <option>BBC News</option>
+      <option>Bussiness</option>
+      <option>Trump</option>
     </select>
   </div>
-  </fieldset>
+  <div class=" col-sm form-group">
+    <label for="exampleSelect1">Sources</label>
+    <select class="form-control" id="allsources">
+      
+    </select>
+  </div>
+  <div class=" col-sm form-group">
+    <label for="country">Country</label>
+    <select class="form-control" name="countries" id="countries">
+  
+    </select>
+  </div>
+  </div>
     <div id="article"></div>
     </div>
 
 </body>
-<script type="text/javascript" src="scripts/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script><script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript" src="scripts/sources.js"></script>
 
 </html>

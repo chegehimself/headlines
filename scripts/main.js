@@ -1,6 +1,6 @@
  	let API_KEY = '7716a0e9d1884187aeba1ce0a4178f3d';
 
- 	let news_url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`;
+ 	let news_url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
   let req = new Request(news_url);
       fetch(req)
       .then((response) => response.json())
