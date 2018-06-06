@@ -12,11 +12,11 @@ function changeSource() {
     });
 
     // url for sources
-    let news_url = `https://newsapi.org/v2/top-headlines?sources=${selectedSource}&apiKey=${API_KEY}`;
-  let req = new Request(news_url);
-      fetch(req)
-      .then((response) => response.json())
-      .then((fetched_data) => {
+let news_url = `https://newsapi.org/v2/top-headlines?sources=${selectedSource}&apiKey=${API_KEY}`;
+let req = new Request(news_url);
+    fetch(req)
+    .then((response) => response.json())
+    .then((fetched_data) => {
         console.log(fetched_data);
         let article = '<h2 class="mb-4">News Articles</h2>';
         each = fetched_data.articles;
