@@ -1,23 +1,23 @@
 var staticCacheName = 'headline-static';
+var contentImgsCache = 'images-storage'
+
+var allCaches = [
+  staticCacheName,
+  contentImgsCache
+];
 
 const offlineStuff =  [
-	// './index.html',
-	// './css/_all-skins.min.css',
-	// './css/AdminLTE.min.css',
-	// './css/normalize.css',
-	// './scripts/main.js',
-	// './scripts/headlines.js',
-	// './scripts/search.js',
-	// '/scripts/viewSource.js',
-    'https://james-chege.github.io/headlines/index.js',
-    'https://raw.githubusercontent.com/james-chege/headlines/master/index.html',
-    'https://raw.githubusercontent.com/james-chege/headlines/master/css/all-skins.min.css',
-    'https://raw.githubusercontent.com/james-chege/headlines/master/css/AdminLTE.min.css',
-    'https://raw.githubusercontent.com/james-chege/headlines/master/css/normalize.css',
-    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/main.js',
-    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/headlines.js',
-    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/search.js',
-    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/viewSource.js',
+	'./index.html',
+	'./css/_all-skins.min.css',
+	'./css/AdminLTE.min.css',
+	'./css/normalize.css',
+    './css/custom.css',
+    './index.js',
+	'./scripts/main.js',
+    './scripts/sources.js',
+	'./scripts/headlines.js',
+	'./scripts/search.js',
+	'/scripts/viewSource.js',
   'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
   'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
 ];
@@ -46,3 +46,41 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
+
+self.addEventListener('fetch', function(event) {
+  var requestUrl = new URL(event.request.url);
+
+  if (requestUrl.origin === location.origin) {
+    if (requestUrl.pathname === '/index.html') {
+      event.respondWith(caches.match('/index.html'));
+      return;
+    }
+    if (requestUrl.pathname.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+      event.respondWith(servePhoto(event.request));
+      return;
+    }
+  }
+
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
+});
+
+function servePhoto(request) {
+  var storageUrl = request.url;
+  console.log(storageUrl);
+
+  return caches.open(contentImgsCache).then(function(cache) {
+    return cache.match(storageUrl).then(function(response) {
+      if (response) return response;
+
+      return fetch(request).then(function(networkResponse) {
+        cache.put(storageUrl, networkResponse.clone());
+        return networkResponse;
+      });
+    });
+  });
+}
+
