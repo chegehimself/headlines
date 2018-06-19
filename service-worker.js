@@ -1,15 +1,23 @@
 var staticCacheName = 'headline-static';
 
 const offlineStuff =  [
-	'./james-chege/headlines/index.html',
-	'./james-chege/headlines/css/_all-skins.min.css',
-	'./james-chege/headlines/css/AdminLTE.min.css',
-	'./james-chege/headlines/css/normalize.css',
-	'./james-chege/headlines/scripts/main.js',
-	'./james-chege/headlines/scripts/headlines.js',
-	'./james-chege/headlines/scripts/main.js',
-	'./james-chege/headlines/scripts/search.js',
-	'/james-chege/headlines/scripts/viewSource.js',
+	// './index.html',
+	// './css/_all-skins.min.css',
+	// './css/AdminLTE.min.css',
+	// './css/normalize.css',
+	// './scripts/main.js',
+	// './scripts/headlines.js',
+	// './scripts/search.js',
+	// '/scripts/viewSource.js',
+    'https://raw.githubusercontent.com/james-chege/headlines/master/index.html',
+    'https://raw.githubusercontent.com/james-chege/headlines/master/css/_all-skins.min.css',
+    'https://raw.githubusercontent.com/james-chege/headlines/master/css/AdminLTE.min.css',
+    'https://raw.githubusercontent.com/james-chege/headlines/master/css/normalize.css',
+    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/main.js',
+    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/headlines.js',
+    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/search.js',
+    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/search.js',
+    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/viewSource.js',
   'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
   'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
 ];
