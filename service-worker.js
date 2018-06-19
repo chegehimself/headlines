@@ -1,15 +1,15 @@
 var staticCacheName = 'headline-static';
 
 const offlineStuff =  [
-	'./headlines/index.html',
-	'./headlines/css/_all-skins.min.css',
-	'./headlines/css/AdminLTE.min.css',
-	'./headlines/css/normalize.css',
-	'./headlines/scripts/main.js',
-	'./headlines/scripts/headlines.js',
-	'./headlines/scripts/main.js',
-	'./headlines/scripts/search.js',
-	'/headlines/scripts/viewSource.js',
+	'./james-chege/headlines/index.html',
+	'./james-chege/headlines/css/_all-skins.min.css',
+	'./james-chege/headlines/css/AdminLTE.min.css',
+	'./james-chege/headlines/css/normalize.css',
+	'./james-chege/headlines/scripts/main.js',
+	'./james-chege/headlines/scripts/headlines.js',
+	'./james-chege/headlines/scripts/main.js',
+	'./james-chege/headlines/scripts/search.js',
+	'/james-chege/headlines/scripts/viewSource.js',
   'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
   'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
 ];
