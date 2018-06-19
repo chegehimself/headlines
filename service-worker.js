@@ -7,6 +7,7 @@ var allCaches = [
 ];
 
 const offlineStuff =  [
+  '/',
 	'css/all-skins.min.css',
 	'css/AdminLTE.min.css',
 	'css/normalize.css',
