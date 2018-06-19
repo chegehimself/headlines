@@ -1,4 +1,4 @@
 // register service worker
 if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js');
+  navigator.serviceWorker.register('https://raw.githubusercontent.com/james-chege/headlines/master/service-worker.js');
 }
