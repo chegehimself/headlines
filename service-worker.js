@@ -7,19 +7,18 @@ var allCaches = [
 ];
 
 const offlineStuff =  [
-	'index.html',
 	'css/all-skins.min.css',
 	'css/AdminLTE.min.css',
 	'css/normalize.css',
-    'css/custom.css',
-    'index.js',
+  'css/custom.css',
+  'index.js',
 	'scripts/main.js',
-    'scripts/sources.js',
+  'scripts/sources.js',
 	'scripts/headlines.js',
 	'scripts/search.js',
 	'scripts/viewSource.js',
   'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
-  'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
+  'css/bootstrap.min.css'
 ];
 
 self.addEventListener('install', (event) => {
