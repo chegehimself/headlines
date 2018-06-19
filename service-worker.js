@@ -16,7 +16,6 @@ const offlineStuff =  [
     'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/main.js',
     'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/headlines.js',
     'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/search.js',
-    'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/search.js',
     'https://raw.githubusercontent.com/james-chege/headlines/master/scripts/viewSource.js',
   'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
   'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
