@@ -8,7 +8,7 @@ var allCaches = [
 
 const offlineStuff =  [
 	'index.html',
-	'css/_all-skins.min.css',
+	'css/all-skins.min.css',
 	'css/AdminLTE.min.css',
 	'css/normalize.css',
     'css/custom.css',
