@@ -31,7 +31,7 @@
           </li>
         </ul>
         <div class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="searchMe">
+          <input onkeypress="return runScript(event)" class="form-control mr-sm-2 myElements" type="text" placeholder="Search" aria-label="Search" id="searchMe">
           <button onclick="searchFunc();" class="btn btn-default my-2 my-sm-0" id="bt">Search</button>
         </div>
       </div>
@@ -61,8 +61,11 @@
 <script type="text/javascript" src="scripts/sources.js"></script>
 <script type="text/javascript" src="scripts/main.js"></script>
 <script type="text/javascript" src="scripts/search.js"></script>
+<script type="text/javascript" src="idb.js"></script>
+<script type="text/javascript" src="myidb.js"></script>
 <script type="text/javascript" src="scripts/headlines.js"></script>
 <script type="text/javascript" src="scripts/viewSource.js"></script>
 <script type="text/javascript" src="service-worker.js"></script>
 <script type="text/javascript" src="index.js"></script>
+
 </html>
