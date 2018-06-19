@@ -1,4 +1,4 @@
-var cacheName = 'headline';
+var staticCacheName = 'headline-static';
 
 const offlineStuff =  [
 	'./index.html',
@@ -9,57 +9,32 @@ const offlineStuff =  [
 	'./scripts/headlines.js',
 	'./scripts/main.js',
 	'./scripts/search.js',
-	'./scripts/viewSource.js'
+	'/scripts/viewSource.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+  'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
 ];
 
-self.addEventListener('install', (e) => {
+self.addEventListener('install', (event) => {
 	console.log('service worker is installed!');
-	e.waitUntil(
-		caches.open(cacheName).then((cache) => {
+	event.waitUntil(
+		caches.open(staticCacheName).then((cache) => {
 			console.log("caching stuffs...");
 			return cache.addAll(offlineStuff);
 		})
 		);
 });
 
-self.addEventListener('activate', (e) => {
-    console.log('Activating...');
-    e.waitUntil(
-        caches.keys().then((keyList) => {
-            return Promise.all(keyList.map((key) => {
-                if (key !== cacheName) {
-                    console.log('Keeping only needed cache...', key);
-                    return caches.delete(key);
-                }
-            }));
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('headline-') &&
+                 !allCaches.includes(cacheName);
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
         })
-    );
-    return self.clients.claim();
-});
-
-self.addEventListener('fetch', function(e) {
-    console.log('fetching...', e.request.url);
-    // images caching
-    if (e.request.url.endsWith('.jpg') || e.request.url.endsWith('.png')) {
-        e.respondWith(
-            caches.match(e.request).then(response => {
-                if (response) {
-                    console.log('Stuffs in cache:', e.request.url);
-                    return response
-                };
-                fetch(e.request.clone()).then(response => {
-                    if (!response) {
-                        console.log("we found nothing!");
-                        return response;
-                    }
-                    caches.open(cacheName).then(cache => {
-                        cache.put(e.request, response.clone());
-                        return response;
-                    });
-                }).catch(err => {
-                    console.log("something very bad happened!");
-                });
-            })
-        );
-    }
+      );
+    })
+  );
 });
